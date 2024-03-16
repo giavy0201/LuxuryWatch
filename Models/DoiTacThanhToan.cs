@@ -1,4 +1,4 @@
-namespace LuxyryWatch.Models.Entities
+namespace LuxyryWatch.Models
 {
     using System;
     using System.Collections.Generic;
@@ -6,23 +6,26 @@ namespace LuxyryWatch.Models.Entities
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("Quyen")]
-    public partial class Quyen
+    [Table("DoiTacThanhToan")]
+    public partial class DoiTacThanhToan
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Quyen()
+        public DoiTacThanhToan()
         {
-            LoaiThanhVien_Quyen = new HashSet<LoaiThanhVien_Quyen>();
+            DonDatHangs = new HashSet<DonDatHang>();
         }
 
         [Key]
-        [StringLength(100)]
-        public string MaQuyen { get; set; }
+        public int MaDTTT { get; set; }
 
         [StringLength(255)]
-        public string TenQuyen { get; set; }
+        public string TenDTTT { get; set; }
+
+        public int? MaHTTT { get; set; }
+
+        public virtual HinhThucThanhToan HinhThucThanhToan { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<LoaiThanhVien_Quyen> LoaiThanhVien_Quyen { get; set; }
+        public virtual ICollection<DonDatHang> DonDatHangs { get; set; }
     }
 }

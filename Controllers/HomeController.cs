@@ -48,5 +48,14 @@ namespace LuxyryWatch.Controllers
         {
             return PartialView();
         }
+         public ActionResult HienThiSanPhamMoiPartial()
+ {
+     return PartialView();
+ }
+
+ public ActionResult HienThiSanPhamKhuyenMaiPartial()
+ {
+     return PartialView();
+ }
     }
 }

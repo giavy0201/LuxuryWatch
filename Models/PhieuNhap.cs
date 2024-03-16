@@ -1,4 +1,4 @@
-namespace LuxyryWatch.Models.Entities
+namespace LuxyryWatch.Models
 {
     using System;
     using System.Collections.Generic;
@@ -6,26 +6,26 @@ namespace LuxyryWatch.Models.Entities
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("DoiTacThanhToan")]
-    public partial class DoiTacThanhToan
+    [Table("PhieuNhap")]
+    public partial class PhieuNhap
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public DoiTacThanhToan()
+        public PhieuNhap()
         {
-            DonDatHangs = new HashSet<DonDatHang>();
+            ChiTietPhieuNhaps = new HashSet<ChiTietPhieuNhap>();
         }
 
         [Key]
-        public int MaDTTT { get; set; }
+        public int MaPN { get; set; }
 
-        [StringLength(255)]
-        public string TenDTTT { get; set; }
+        public int? MaNCC { get; set; }
 
-        public int? MaHTTT { get; set; }
-
-        public virtual HinhThucThanhToan HinhThucThanhToan { get; set; }
+        [Column(TypeName = "date")]
+        public DateTime? NgayLap { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DonDatHang> DonDatHangs { get; set; }
+        public virtual ICollection<ChiTietPhieuNhap> ChiTietPhieuNhaps { get; set; }
+
+        public virtual NhaCungCap NhaCungCap { get; set; }
     }
 }

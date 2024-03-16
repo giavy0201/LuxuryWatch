@@ -1,4 +1,4 @@
-namespace LuxyryWatch.Models.Entities
+namespace LuxyryWatch.Models
 {
     using System;
     using System.Collections.Generic;
@@ -6,21 +6,20 @@ namespace LuxyryWatch.Models.Entities
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("NhaCungCap")]
-    public partial class NhaCungCap
+    [Table("KhachHang")]
+    public partial class KhachHang
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public NhaCungCap()
+        public KhachHang()
         {
-            PhieuNhaps = new HashSet<PhieuNhap>();
-            SanPhams = new HashSet<SanPham>();
+            DonDatHangs = new HashSet<DonDatHang>();
         }
 
         [Key]
-        public int MaNCC { get; set; }
+        public int Makh { get; set; }
 
         [StringLength(255)]
-        public string TenNCC { get; set; }
+        public string TenKH { get; set; }
 
         [StringLength(255)]
         public string DiaChi { get; set; }
@@ -31,10 +30,11 @@ namespace LuxyryWatch.Models.Entities
         [StringLength(20)]
         public string SoDienThoai { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PhieuNhap> PhieuNhaps { get; set; }
+        public int? MaTV { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SanPham> SanPhams { get; set; }
+        public virtual ICollection<DonDatHang> DonDatHangs { get; set; }
+
+        public virtual ThanhVien ThanhVien { get; set; }
     }
 }

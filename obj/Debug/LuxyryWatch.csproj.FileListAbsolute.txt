@@ -77,3 +77,7 @@ D:\Document\CNTT\Lap Trinh Web\DA\DongHo\LuxuryWatch\obj\Debug\LuxyryWatch.cspro
 D:\Document\CNTT\Lap Trinh Web\DA\DongHo\LuxuryWatch\obj\Debug\LuxyryWatch.csproj.CopyComplete
 D:\Document\CNTT\Lap Trinh Web\DA\DongHo\LuxuryWatch\obj\Debug\LuxyryWatch.dll
 D:\Document\CNTT\Lap Trinh Web\DA\DongHo\LuxuryWatch\obj\Debug\LuxyryWatch.pdb
+C:\Users\Vy\OneDrive\Tài liệu\GitHub\LuxuryWatch1\obj\Debug\LuxyryWatch.csproj.AssemblyReference.cache
+C:\Users\Vy\OneDrive\Tài liệu\GitHub\LuxuryWatch1\obj\Debug\LuxyryWatch.csproj.CoreCompileInputs.cache
+C:\Users\Vy\OneDrive\Tài liệu\GitHub\LuxuryWatch1\obj\Debug\LuxyryWatch.dll
+C:\Users\Vy\OneDrive\Tài liệu\GitHub\LuxuryWatch1\obj\Debug\LuxyryWatch.pdb

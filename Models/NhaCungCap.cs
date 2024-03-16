@@ -1,4 +1,4 @@
-namespace LuxyryWatch.Models.Entities
+namespace LuxyryWatch.Models
 {
     using System;
     using System.Collections.Generic;
@@ -6,28 +6,35 @@ namespace LuxyryWatch.Models.Entities
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("LoaiThanhVien")]
-    public partial class LoaiThanhVien
+    [Table("NhaCungCap")]
+    public partial class NhaCungCap
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public LoaiThanhVien()
+        public NhaCungCap()
         {
-            LoaiThanhVien_Quyen = new HashSet<LoaiThanhVien_Quyen>();
-            ThanhViens = new HashSet<ThanhVien>();
+            PhieuNhaps = new HashSet<PhieuNhap>();
+            SanPhams = new HashSet<SanPham>();
         }
 
         [Key]
-        public int MaLoaiTV { get; set; }
+        public int MaNCC { get; set; }
 
         [StringLength(255)]
-        public string TenLoaiTV { get; set; }
+        public string TenNCC { get; set; }
 
-        public double? uuDai { get; set; }
+        [StringLength(255)]
+        public string DiaChi { get; set; }
+
+        [StringLength(255)]
+        public string Email { get; set; }
+
+        [StringLength(20)]
+        public string SoDienThoai { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<LoaiThanhVien_Quyen> LoaiThanhVien_Quyen { get; set; }
+        public virtual ICollection<PhieuNhap> PhieuNhaps { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ThanhVien> ThanhViens { get; set; }
+        public virtual ICollection<SanPham> SanPhams { get; set; }
     }
 }

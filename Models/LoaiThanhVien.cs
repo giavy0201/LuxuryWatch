@@ -1,4 +1,4 @@
-namespace LuxyryWatch.Models.Entities
+namespace LuxyryWatch.Models
 {
     using System;
     using System.Collections.Generic;
@@ -6,26 +6,28 @@ namespace LuxyryWatch.Models.Entities
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("HinhThucThanhToan")]
-    public partial class HinhThucThanhToan
+    [Table("LoaiThanhVien")]
+    public partial class LoaiThanhVien
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public HinhThucThanhToan()
+        public LoaiThanhVien()
         {
-            DoiTacThanhToans = new HashSet<DoiTacThanhToan>();
-            DonDatHangs = new HashSet<DonDatHang>();
+            LoaiThanhVien_Quyen = new HashSet<LoaiThanhVien_Quyen>();
+            ThanhViens = new HashSet<ThanhVien>();
         }
 
         [Key]
-        public int MaHTTT { get; set; }
+        public int MaLoaiTV { get; set; }
 
         [StringLength(255)]
-        public string TenHTTT { get; set; }
+        public string TenLoaiTV { get; set; }
+
+        public double? uuDai { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DoiTacThanhToan> DoiTacThanhToans { get; set; }
+        public virtual ICollection<LoaiThanhVien_Quyen> LoaiThanhVien_Quyen { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DonDatHang> DonDatHangs { get; set; }
+        public virtual ICollection<ThanhVien> ThanhViens { get; set; }
     }
 }

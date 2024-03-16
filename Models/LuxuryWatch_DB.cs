@@ -3,16 +3,15 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 using System.Linq;
 
-namespace LuxyryWatch.Models.Entities
+namespace LuxyryWatch.Models
 {
-    public partial class LuxuryWatchDB : DbContext
+    public partial class LuxuryWatch_DB : DbContext
     {
-        public LuxuryWatchDB()
-            : base("name=LuxuryWatchDB")
+        public LuxuryWatch_DB()
+            : base("name=LuxuryWatch_DB")
         {
         }
 
-        public virtual DbSet<C__MigrationHistory> C__MigrationHistory { get; set; }
         public virtual DbSet<AnhSanPham> AnhSanPhams { get; set; }
         public virtual DbSet<ChiTietDonDatHang> ChiTietDonDatHangs { get; set; }
         public virtual DbSet<ChiTietPhieuNhap> ChiTietPhieuNhaps { get; set; }
